@@ -36,3 +36,7 @@ button {
   padding: 1px;
   border: red solid 3px;
 }
+.color {
+  width: 20px;
+  height: 20px;
+}
