@@ -8,15 +8,19 @@ const boxs = document.querySelector("#boxes");
 const btnDestroy = document.querySelector(`button[data-destroy]`);
 
 let amounts;
+const end = onNumberBox();
 
 function onNumberBox() {
-  amounts = input.value;
-  console.log(amounts);
+  amounts = Number(input.value);
+  return amounts;
 }
 let size = 30;
 const box = [];
-function createBoxes() {
-  for (let i = 0; i <= 10; i++) {
+
+function createBoxes(amounts) {
+  boxs.innerHTML = "";
+  size = 30;
+  for (let i = 0; i < amounts; i++) {
     boxs.insertAdjacentHTML(
       "beforeend",
       `<div class="color" style="width: ${size}px; height: ${size}px; background-color: ${getRandomHexColor()};"></div>`
@@ -26,13 +30,9 @@ function createBoxes() {
   boxs.append(...box);
 }
 function destroyBoxes() {
-  const removeElem = document.querySelectorAll(".color");
-  for (let i = 0; i < removeElem.length; i++) {
-    removeElem[i].remove();
-  }
-  size = 30;
+  boxs.innerHTML = "";
 }
 
 input.addEventListener("input", onNumberBox);
-btnCreate.addEventListener("click", createBoxes);
+btnCreate.addEventListener("click", () => createBoxes(amounts));
 btnDestroy.addEventListener("click", destroyBoxes);
