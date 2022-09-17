@@ -7,7 +7,9 @@ const span = document.querySelector(".color");
 btn.addEventListener("click", onChangeColor);
 
 function onChangeColor() {
+  //  якщо видалити цю змину, то в span і style.backgroundColor будуть різні кольори
   const backgroundColor = getRandomHexColor();
+
   span.textContent = backgroundColor;
   document.querySelector("body").style.backgroundColor = backgroundColor;
 }

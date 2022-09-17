@@ -13,5 +13,4 @@ function handleSubmit(ev) {
   user.password = form.elements.password.value;
   console.log(user);
   form.reset();
-  return;
 }

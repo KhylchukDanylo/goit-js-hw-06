@@ -3,9 +3,11 @@ const input = document.querySelector("#validation-input");
 input.addEventListener("blur", checkSumbols);
 
 function checkSumbols() {
-  if (input.value.length === 6) {
-    input.classList = "valid";
+  if (input.value.length === Number(input.dataset.length)) {
+    input.classList.add("valid");
+    input.classList.remove("invalid");
   } else {
-    input.classList = "invalid";
+    input.classList.add("invalid");
+    input.classList.remove("valid");
   }
 }

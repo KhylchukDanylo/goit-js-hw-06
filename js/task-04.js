@@ -6,9 +6,13 @@ const minusBtn = document.querySelector(`button[data-action="decrement"]`);
 addBtn.addEventListener("click", onAddClick);
 minusBtn.addEventListener("click", onMinusClick);
 
+let num = 0;
+
 function onAddClick() {
-  counterValue.textContent = Number(counterValue.textContent) + 1;
+  num += 1;
+  counterValue.textContent = Number(num);
 }
 function onMinusClick() {
-  counterValue.textContent = Number(counterValue.textContent) - 1;
+  num -= 1;
+  counterValue.textContent = Number(num);
 }

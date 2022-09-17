@@ -18,7 +18,6 @@ let size = 30;
 const box = [];
 
 function createBoxes(amounts) {
-  boxs.innerHTML = "";
   size = 30;
   for (let i = 0; i < amounts; i++) {
     boxs.insertAdjacentHTML(
